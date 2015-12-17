@@ -1,0 +1,14 @@
+express use manual
+
+install express: sudo npm install express -g 
+
+express -V : look version
+express -h : show help manual
+
+operation step:
+
+1.express -e app-name: create project named app-name
+2.cd app-name 
+3.sudo npm install: install dependencies
+4.npm start: launch this app at localhost:3000
+that's all.

@@ -1,0 +1,21 @@
+1.response.redirect:重定向
+response.redirect("/hello/anime");
+response.redirect("http://www.example.com");
+response.redirect(301,"http://www.example.com");
+
+2.response.sendFile:发送文件
+response.sendFile("/path/to/anime.mp4");
+
+3.response.render:用于渲染网页模板
+app.get("/", function(request, response){
+	response.render("index", {message: "Hello World"});
+});
+上面例子中，使用render方法，将message变量传入index模板，渲染成HTML网页
+
+4.request.ip:请求来源的IP地址
+5.request.files:请求来源用于活取上传的文件
+
+
+
+
+
