@@ -1,0 +1,3 @@
+package cPickle is wrote by c programming language,so the speed is 1000 times faster than pickle.otherwise,there is not difference between them 
+you can import cPickle and rename it to pickle,so the origin codes can keep same:
+import cPickle as pickle

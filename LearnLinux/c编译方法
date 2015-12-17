@@ -1,0 +1,19 @@
+1.整个流程一次完成：
+gcc hello.c -o hello
+./hello
+2.在预处理后停止编译：
+gcc E hello.c  -o hello.cpp
+3.将hello.cpp 编译为目标代码：-c
+gcc -x cpp-out  -c hello.cpp hello.o
+-x:指定从特定一步开始 
+4.链接目标文件，生成二进制代码
+
+5.多个源文件一起编译：
+gcc file1.c file2.c -o fileoutname
+
+6. 不在默认目录下的库文件和头文件的链接：-L -I
+gcc file.c -L/home/fred/lib -I/home/fred/include -lnew  -o fileoutname
+-l 使得链接程序使用指定的库中的目标代码 
+
+7. -static 链接静态库
+

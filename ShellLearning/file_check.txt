@@ -1,0 +1,7 @@
+-s file 非空文件
+-f file 存在该文件
+-d file 该文件为目录
+-w file 为可写的文件
+-r file 为只读的文件
+-x file 为可执行的文件
+

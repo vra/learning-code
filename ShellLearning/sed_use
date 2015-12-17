@@ -1,0 +1,40 @@
+sed 用法总结
+
+替换给定文本中的字符串
+sed 's/pattern/replace_string/' file :将每一行的第一个pattern替换为replace_string
+-i:将修改应用到原文件
+
+sed 's/p/r/g' file: 每个都替换
+sed 's/p/r/3g' file:从第三个匹配点开始匹配
+
+如果模式里面包含‘/’，则对其进行转义：
+sed 's/\/a/\/b/g' file 将file里面的/a替换为/b
+
+也可以用别的任意符号作为分割符：
+sed 's|text|replace|g' file
+
+移除空白行：
+sed '/^$/d' file
+/pattern/d 会移除匹配的行
+
+&:代替已匹配字符串：
+sed 's/\w\+/[&]/g' file:在每个单词周围加[]
+\w\+:匹配每个单词
+
+子串匹配标记\1:
+echo this is digit 7 in  a number | sed 's/digit \([0-9]\)/\1/'
+结果是 this is 7 in a number
+\([0-9]\):匹配0到9的子串，注意：括号要转义。加括号表示子串。\1表示第一个匹配的子串，以此类推。
+在sed命令里面，（，+，）都需要转义
+echo seven EIGHT | sed 's/\([a-z]\+\) \([A-Z]\+\) / \2 \1/'
+结果是EIGHT seven
+
+组合多个表达式：
+sed 'exp1 ' | sed 'exp2'等效于 sed 'exp1; exp2'
+
+sed 一般用单引号，但是使用双引号可以使用外边的变量
+
+
+
+
+
